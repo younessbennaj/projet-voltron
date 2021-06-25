@@ -180,9 +180,49 @@ L'objectif pour l'équipe IA va être de mettre en place un modèle de machine l
 
 Par la suite on pourra améliorer notre modèle de ML pour pouvoir prédire quel paramètre fera défaut. 
 
+## Panda 
 
+C'est la librairie python la plus utilisée pour faire du traitement de donnée en python 
 
+### Dataset 
 
+Un dataset sera composé: 
 
++ Index 
++ Valeur correspondantes (features)
 
+### DataFrame 
 
+Un DataFrame est similaire à un tableau mais en beaucoup plus puissant grâce à Python. 
+
+#### Créer un mock de données avec numpy 
+
+```
+from numpy.random import randint
+```
+
+Pour pallier à un manque de donnée nous allons générer des fausses données pour pouvoir avancer et tester notre model. Pour se faire on va utiliser la méthode `randint` de numpy qui permet de générer un nombre alétoirement comprit entre deux valeur `low` et `high`. On peut également spécifier la shape du tableau numpy (dans notre cas 5 tableau de dimension 4).
+
+```
+df = pd.DataFrame(data,index,columns)
+```
+
+### Données manquantes 
+
+Petit dataset => compléter les données manquantes 
+
+### Opération GroupBy 
+
+Colonne catégorielle => label/catégories (e.g: risque infectieux/ pas de risque infectieux)
+
+## Comment labelisé le dataset 
+
++ ppm25: < 0.56
++ ppm10: < 1.76
++ temperature: 19 - 26 °C (ISO5)
++ humidité: 45 - 65 % (ISO5)
++ co2: 300 – 380 ppm 
+
+## Dataset Labelling 
+
+L'objectif va être de créer un labeled dataset à partir du CSV de base. 
